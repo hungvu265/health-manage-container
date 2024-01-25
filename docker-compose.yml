@@ -1,0 +1,24 @@
+# :1.0.02
+version: "3.9"
+
+services:
+  health_manage_app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: health_manage_app
+    container_name: 'health_manage_app'
+    volumes:
+      - ./app/conf/nginx/conf.d:/etc/nginx/conf.d
+      - ./health-web:/var/www/html/health-web
+    ports:
+      - "9100:80"
+    #logging:
+    #  driver: fluentd
+    #  options:
+    #    fluentd-address: "localhost:24224"
+    #    fluentd-async-connect: "false"
+    #    tag : "app"
+    #command: supervisord
+    restart: always
+
