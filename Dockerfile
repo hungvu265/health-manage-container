@@ -63,6 +63,7 @@ RUN apt install -y nginx
 	
 #COPY ./app/conf/nginx/sites-available/default /etc/nginx/sites-available/default
 COPY ./app/conf/nginx/conf.d/vhosts.conf /etc/nginx/conf.d/vhosts.conf
+COPY ./app/conf/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # PostgreSQL
 COPY install_postgresql.sh /install_postgresql.sh
