@@ -80,6 +80,9 @@ COPY ./health-web /var/www/html/health-web
 #WORKDIR /var/www/html/health-web
 #RUN npm install
 #RUN npm run build
+
+# ELB healthcheck
+COPY ./healthcheck /var/www/html/healthcheck
 	
 # Run web server
 RUN echo "\

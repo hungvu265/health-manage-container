@@ -11,6 +11,7 @@ services:
     volumes:
       - ./app/conf/nginx/conf.d:/etc/nginx/conf.d
       - ./health-web:/var/www/html/health-web
+      - ./healthcheck:/var/www/html/healthcheck
     ports:
       - "9101:80"
     #logging:
